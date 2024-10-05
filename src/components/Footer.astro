@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+	{
+		name: "LinkedIn",
+		url: "https://linkedin.com/in/tuusuario",
+		icon: "linkedin",
+	},
+	{
+		name: "Twitter",
+		url: "https://twitter.com/tuusuario",
+		icon: "twitter",
+	},
+];
+---
+
+<footer class="mt-24 bg-accent py-8 text-white">
+	<div class="container mx-auto px-4">
+		<div
+			class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0"
+		>
+			<div class="text-center md:text-left">
+				<h2 class="text-xl font-bold">Dr. Vidal Padilla</h2>
+				<p class="text-sm">Psicólogo Clínico</p>
+				<p class="text-sm">Calle falsa, 123 - Arequipa, Perú</p>
+			</div>
+
+			<nav class="flex space-x-4">
+				{
+					socialLinks.map((link) => (
+						<a
+							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="transition-colors duration-300 hover:text-musgo"
+							aria-label={`Visita nuestro perfil de ${link.name}`}
+						>
+							<Icon name={link.icon} size={24} />
+						</a>
+					))
+				}
+			</nav>
+
+			<div class="flex flex-col items-center justify-center space-y-1">
+				<p class="flex items-center gap-2 text-sm">
+					<Icon name="phone" size={12} />
+					51 956 280 423
+				</p>
+				<p class="flex items-center gap-2 text-sm">
+					<Icon name="email" size={12} />
+					contacto@vidalpadilla.com
+				</p>
+				<p class="flex items-center gap-2 text-sm">
+					&copy; {currentYear} | Derechos reservados.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon/components";
+
+const faqs = [
+	{
+		question: "¿Cuánto dura una sesión de terapia?",
+		answer: "Las sesiones de terapia generalmente duran 50 minutos. Sin embargo, la primera sesión puede ser más larga, alrededor de 60-90 minutos, para permitir una evaluación inicial completa.",
+	},
+	{
+		question: "¿Con qué frecuencia debo asistir a terapia?",
+		answer: "La frecuencia de las sesiones depende de tus necesidades individuales. Típicamente, comenzamos con sesiones semanales y ajustamos según tu progreso y objetivos.",
+	},
+	{
+		question: "¿Cómo sé si necesito terapia?",
+		answer: "Si estás experimentando dificultades emocionales, problemas en tus relaciones, o sientes que no puedes manejar el estrés por tu cuenta, la terapia puede ser beneficiosa. No hay un problema 'demasiado pequeño' para buscar ayuda.",
+	},
+	{
+		question: "¿Qué métodos de pago aceptan?",
+		answer: "Aceptamos efectivo, transferencias bancarias y tarjetas de crédito/débito. También trabajamos con varias compañías de seguros. Por favor, consulta los detalles específicos durante tu primera cita.",
+	},
+	{
+		question: "¿Ofrecen terapia en línea?",
+		answer: "Sí, ofrecemos sesiones de terapia en línea a través de plataformas seguras de videoconferencia. Esto proporciona flexibilidad y accesibilidad para nuestros clientes.",
+	},
+];
+---
+
+<section id="faq" class="my-12 bg-gray-50 py-16">
+	<div class="container mx-auto px-4">
+		<h2
+			class="mb-12 text-center text-3xl font-bold tracking-tighter text-accent md:text-4xl lg:text-5xl"
+		>
+			Preguntas Frecuentes
+		</h2>
+		<div class="mx-auto max-w-3xl">
+			{
+				faqs.map((faq) => (
+					<details class="mb-4 rounded-lg bg-white shadow-md ring-1 ring-gray-200">
+						<summary class="flex cursor-pointer items-center justify-between rounded-lg bg-white p-6 text-lg font-semibold text-accent">
+							<span class="flex items-center">
+								<Icon
+									name="circle-help"
+									class="mr-2 text-lila"
+									size={24}
+								/>
+								{faq.question}
+							</span>
+							<Icon
+								name="chevron-down"
+								size={24}
+								class="text-lila transition-transform"
+							/>
+						</summary>
+						<p class="p-6 pt-0 text-gray-700">{faq.answer}</p>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	details > summary {
+		list-style: none;
+		user-select: none;
+	}
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+	details[open] > summary .chevron-down {
+		transform: rotate(180deg);
+	}
+</style>

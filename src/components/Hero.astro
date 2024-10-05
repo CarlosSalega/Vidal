@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="mb-20 mt-24 flex flex-col md:flex-row">
+	<div class="flex items-center justify-center p-4 md:w-1/2">
+		<img
+			src="/avatar2.webp"
+			alt="Dr. Vidal Padilla"
+			class="mx-auto rounded-full shadow-lg ring-8 ring-white"
+			width="300"
+			height="300"
+		/>
+	</div>
+
+	<div
+		class="flex w-full flex-col justify-center space-y-6 p-4 md:w-1/2 md:pl-0"
+	>
+		<div class="">
+			<h1
+				class="px-2 text-4xl font-bold tracking-tighter text-accent md:text-5xl lg:text-6xl"
+			>
+				Dr. Vidal Padilla
+			</h1>
+			<p
+				class="mb-6 px-2 text-2xl font-medium text-musgo md:text-cyan-500"
+			>
+				Psicólogo Clínico
+			</p>
+			<p
+				class="max-w-[600px] px-2 text-lg text-gray-700 md:text-lg lg:text-xl"
+			>
+				<span class="font-black">+5 años</span> de experiencia me avalan
+				en el campo de la salud mental, ofrezco un <span
+					class="font-black">espacio seguro y confidencial</span
+				>
+				para ayudarte a superar desafíos emocionales y alcanzar tu bienestar
+				mental.
+			</p>
+		</div>
+		<div class="max-w-[500px] px-2">
+			<a
+				href="https://api.whatsapp.com/send?phone=51956280423&text=Dr.Vidal%20Padilla"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex transform cursor-default items-center justify-center gap-2 rounded-full bg-musgo px-6 py-3 text-xl text-white ring-1 ring-gray-200 transition duration-300 ease-in-out hover:scale-105"
+			>
+				Reserva tu sesión
+				<Icon name="calendar" size={24} />
+			</a>
+		</div>
+	</div>
+</section>

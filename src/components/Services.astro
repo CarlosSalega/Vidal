@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+
+const services = [
+	{
+		title: "Terapia Individual",
+		description:
+			"Sesiones personalizadas para abordar tus necesidades específicas y promover tu crecimiento personal.",
+		icon: "user",
+	},
+	{
+		title: "Terapia de Pareja",
+		description:
+			"Mejora tu relación y aprende herramientas de comunicación efectiva con tu pareja.",
+		icon: "heart",
+	},
+	{
+		title: "Terapia Familiar",
+		description:
+			"Resuelve conflictos familiares y fortalece los lazos entre los miembros de tu familia.",
+		icon: "house",
+	},
+	{
+		title: "Manejo del Estrés",
+		description:
+			"Aprende técnicas efectivas para manejar el estrés y mejorar tu calidad de vida.",
+		icon: "brain",
+	},
+];
+---
+
+<section id="servicios" class="my-24 px-4">
+	<h2
+		class="mb-12 text-center text-3xl font-bold tracking-tighter text-accent md:text-4xl lg:text-5xl"
+	>
+		Servicios que ofrezco
+	</h2>
+	<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+		{
+			services.map((service) => (
+				<div class="flex flex-col items-center rounded-lg bg-white p-6 shadow-lg ring-1 ring-gray-200">
+					<Icon
+						name={service.icon}
+						size={48}
+						class="mb-4 text-lila"
+					/>
+					<h3 class="mb-2 text-xl font-semibold text-accent">
+						{service.title}
+					</h3>
+					<p class="text-center text-gray-700">
+						{service.description}
+					</p>
+				</div>
+			))
+		}
+	</div>
+	<div class="mt-24 flex justify-center">
+		<a
+			href="#contacto"
+			class="flex transform cursor-default items-center justify-center gap-2 rounded-full border-2 border-accent bg-transparent px-6 py-3 text-xl text-accent transition duration-300 ease-in-out hover:scale-105"
+		>
+			Consultame por otro servicio
+			<Icon name="arrow-right" size={24} />
+		</a>
+	</div>
+</section>

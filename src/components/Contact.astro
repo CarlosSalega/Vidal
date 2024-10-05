@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+
+const contactLinks = [
+	{
+		name: "Envíame un mensaje",
+		url: "https://api.whatsapp.com/send?phone=51956280423&text=Dr.Vidal%20Padilla", // Reemplaza con tu número de WhatsApp
+		icon: "whatsapp",
+	},
+	{
+		name: "Sigueme en Instagram!",
+		url: "https://www.instagram.com/psico.vidalpadilla/", // Reemplaza con tu usuario de Instagram
+		icon: "instagram",
+	},
+	{
+		name: "Prefieres un email?",
+		url: "mailto:tu@email.com", // Reemplaza con tu dirección de correo
+		icon: "email",
+	},
+];
+---
+
+<section id="contacto" class="my-12 px-4">
+	<h2
+		class="mb-12 text-center text-3xl font-bold tracking-tighter text-accent md:text-4xl lg:text-5xl"
+	>
+		Quieres agendar una consulta?
+	</h2>
+	<div class="mx-auto max-w-xs space-y-4">
+		{
+			contactLinks.map((link) => (
+				<a
+					href={link.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex w-full items-center justify-center gap-4 rounded-full bg-musgo px-4 py-4 text-left text-xl font-medium text-white ring-1 ring-gray-200 transition duration-300 ease-in-out hover:scale-105 hover:font-semibold"
+				>
+					<Icon name={link.icon} size={24} class="ml-10" />
+
+					<span class="w-3/4 text-base leading-none md:text-lg">
+						{link.name}
+					</span>
+				</a>
+			))
+		}
+	</div>
+</section>

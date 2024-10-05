@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+
+const steps = [
+	{
+		icon: "phone-call",
+		title: "Contacto Inicial",
+		description:
+			"Llámanos o envía un correo electrónico para programar tu primera cita. Responderemos a tus preguntas iniciales y te guiaremos en el proceso.",
+	},
+	{
+		icon: "clipboard-list",
+		title: "Evaluación Inicial",
+		description:
+			"En la primera sesión, realizaremos una evaluación completa de tus necesidades y objetivos. Discutiremos tu historial y las razones que te llevan a buscar terapia.",
+	},
+	{
+		icon: "target",
+		title: "Plan de Tratamiento",
+		description:
+			"Basándonos en la evaluación, desarrollaremos juntos un plan de tratamiento personalizado que aborde tus necesidades específicas y establezca objetivos claros.",
+	},
+	{
+		icon: "repeat",
+		title: "Sesiones Regulares",
+		description:
+			"Comenzaremos con sesiones semanales, trabajando en tus objetivos mediante diversas técnicas terapéuticas. La frecuencia puede ajustarse según tu progreso.",
+	},
+	{
+		icon: "circle-check",
+		title: "Evaluación del Progreso",
+		description:
+			"Regularmente revisaremos tu progreso y ajustaremos el plan de tratamiento según sea necesario. Celebraremos tus logros y abordaremos cualquier desafío.",
+	},
+	{
+		icon: "award",
+		title: "Finalización y Seguimiento",
+		description:
+			"Cuando alcances tus objetivos, planificaremos la finalización de la terapia. Ofrecemos sesiones de seguimiento para asegurar que mantengas tu progreso a largo plazo.",
+	},
+];
+---
+
+<section id="proceso" class="my-12 py-16">
+	<div class="container mx-auto px-4">
+		<h2
+			class="mb-12 text-center text-3xl font-bold tracking-tighter text-accent md:text-4xl lg:text-5xl"
+		>
+			Proceso de Terapia
+		</h2>
+		<div class="mx-auto max-w-4xl">
+			{
+				steps.map((step) => (
+					<div class="mb-8 flex items-start">
+						<div class="mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-lila text-white">
+							<Icon name={step.icon} size={24} />
+						</div>
+						<div>
+							<h3 class="mb-2 text-xl font-semibold text-accent">
+								{step.title}
+							</h3>
+							<p class="text-gray-700">{step.description}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
